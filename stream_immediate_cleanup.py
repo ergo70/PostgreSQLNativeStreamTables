@@ -6,7 +6,7 @@ from time import sleep
 _payload = {"blah": "fasel"}
 
 print("Payload injector started...")
-with closing(psycopg2.connect(database="stream", user="postgres", password="postgres")) as conn:
+with closing(psycopg2.connect(database="stream", user="postgres")) as conn:
     conn.autocommit=False
     with conn, conn.cursor() as cur:
         while True:
